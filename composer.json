@@ -1,0 +1,34 @@
+{
+  "name": "hectororm/schema",
+  "description": "Hector Schema",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "MIT",
+  "homepage": "https://gethectororm.com",
+  "authors": [
+    {
+      "name": "Ronan Giron",
+      "email": "ronan@getberlioz.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Hector\\Schema\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Hector\\Schema\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "hectororm/connection": "@dev"
+  },
+  "require-dev": {
+    "ext-pdo_sqlite": "*",
+    "phpunit/phpunit": "^9.3"
+  },
+  "suggest": {
+  }
+}
