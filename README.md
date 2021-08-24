@@ -1,5 +1,11 @@
 # Hector Schema
 
+[![Latest Version](https://img.shields.io/packagist/v/hectororm/schema.svg?style=flat-square)](https://github.com/hectororm/schema/releases)
+[![Software license](https://img.shields.io/github/license/hectororm/schema.svg?style=flat-square)](https://github.com/hectororm/schema/blob/main/LICENSE)
+[![Build Status](https://img.shields.io/travis/com/hectororm/schema/main.svg?style=flat-square)](https://travis-ci.com/hectororm/schema)
+[![Quality Grade](https://img.shields.io/codacy/grade/7a46b10dec0a43268fab3de12d0f0529/main.svg?style=flat-square)](https://app.codacy.com/gh/hectororm/schema)
+[![Total Downloads](https://img.shields.io/packagist/dt/hectororm/schema.svg?style=flat-square)](https://packagist.org/packages/hectororm/schema)
+
 **Hector Schema** is the schema generator module of Hector ORM. Can be used independently of ORM.
 
 ## Installation
