@@ -27,8 +27,9 @@
     "hectororm/connection": "@dev"
   },
   "require-dev": {
+    "ext-pdo_mysql": "*",
     "ext-pdo_sqlite": "*",
-    "phpunit/phpunit": "^9.3"
+    "phpunit/phpunit": "^9.5"
   },
   "suggest": {
   }
