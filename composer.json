@@ -23,6 +23,7 @@
   },
   "require": {
     "php": "^8.0",
+    "ext-pdo": "*",
     "hectororm/connection": "@dev"
   },
   "require-dev": {

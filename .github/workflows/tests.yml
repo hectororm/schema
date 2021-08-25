@@ -20,6 +20,7 @@ jobs:
         composer-flags: [ '' ]
         mysql-versions: [ { distribution: 'mysql', version: '8.0' },
                           { distribution: 'mysql', version: '5.7' },
+                          { distribution: 'mysql', version: '5.6' },
                           { distribution: 'mariadb', version: '10.6' },
                           { distribution: 'mariadb', version: '10.5' },
                           { distribution: 'mariadb', version: '10.4' },
