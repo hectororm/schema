@@ -9,7 +9,7 @@ jobs:
     name: PHPUnit on ${{ matrix.php-versions }} ${{ matrix.composer-flags }} and ${{ matrix.mysql-versions.distribution }} ${{ matrix.mysql-versions.version }}
     runs-on: ubuntu-latest
     env:
-      MYSQL_DSN: "mysql:host=localhost;dbname=sakila;user=root"
+      MYSQL_DSN: "mysql:host=127.0.0.1;dbname=sakila;user=root"
     continue-on-error: ${{ !matrix.stable }}
     strategy:
       fail-fast: false
@@ -47,7 +47,7 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
-          extensions: pdo, pdo-sqlite
+          extensions: pdo, pdo-mysql, pdo-sqlite
           coverage: xdebug
           tools: composer:v2
 
