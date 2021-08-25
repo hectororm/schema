@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-versions: [ '8.0' ]
+        php-versions: [ '8.0', '8.1' ]
         stable: [ true ]
         coverage: [ true ]
         composer-flags: [ '' ]
@@ -41,8 +41,8 @@ jobs:
           mysql-version: ${{ matrix.mysql-versions.version }}
           distribution: ${{ matrix.mysql-versions.distribution }}
 
-      - run: mysql -uroot < tests/Sakila/mysql-schema.sql
-      - run: mysql -uroot < tests/Sakila/mysql-data.sql
+      - run: mysql -uroot -h127.0.0.1 < tests/Sakila/mysql-schema.sql
+      - run: mysql -uroot -h127.0.0.1 < tests/Sakila/mysql-data.sql
 
       - uses: shivammathur/setup-php@v2
         with:
