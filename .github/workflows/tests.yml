@@ -6,7 +6,7 @@ on:
 
 jobs:
   phpunit:
-    name: PHPUnit on ${{ matrix.php-versions }} ${{ matrix.composer-flags }} and ${{ matrix.mysql-versions.distribution }} ${{ matrix.mysql-versions.version }}
+    name: PHPUnit on PHP ${{ matrix.php-versions }} & ${{ matrix.mysql-versions.distribution }} ${{ matrix.mysql-versions.version }}
     runs-on: ubuntu-latest
     env:
       MYSQL_DSN: "mysql:host=127.0.0.1;dbname=sakila;user=root"
