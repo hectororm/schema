@@ -12,8 +12,8 @@ jobs:
       MYSQL_DSN: "mysql:host=localhost;dbname=sakila;user=root"
     continue-on-error: ${{ !matrix.stable }}
     strategy:
+      fail-fast: false
       matrix:
-        mysql-versions: [ '8.0','5.7','5.6','10.6','10.5','10.4','10.3' ]
         php-versions: [ '8.0' ]
         stable: [ true ]
         coverage: [ true ]
@@ -23,6 +23,10 @@ jobs:
             stable: false
             coverage: false
             composer-flags: '--ignore-platform-reqs'
+          - mysql-versions: [ '8.0','5.7','5.6' ]
+            mysql-distribution: 'mysql'
+          - mysql-versions: [ '10.6','10.5','10.4','10.3' ]
+            mysql-distribution: 'mariadb'
 
     steps:
       - uses: actions/checkout@v2
@@ -32,6 +36,7 @@ jobs:
       - uses: shogo82148/actions-setup-mysql@v1
         with:
           mysql-version: ${{ matrix.mysql-versions }}
+          distribution: ${{ matrix.mysql-distribution }}
 
       - run: mysql -uroot < tests/Sakila/mysql-schema.sql
       - run: mysql -uroot < tests/Sakila/mysql-data.sql
