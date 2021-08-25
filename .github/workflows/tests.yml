@@ -25,6 +25,12 @@ jobs:
                           { distribution: 'mariadb', version: '10.5' },
                           { distribution: 'mariadb', version: '10.4' },
                           { distribution: 'mariadb', version: '10.3' } ]
+        include:
+          - php-versions: '8.1'
+            stable: false
+            coverage: false
+            composer-flags: '--ignore-platform-reqs'
+            mysql-versions: ${{ matrix.mysql-versions }}
 
     steps:
       - uses: actions/checkout@v2
