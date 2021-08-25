@@ -25,11 +25,6 @@ jobs:
                           { distribution: 'mariadb', version: '10.5' },
                           { distribution: 'mariadb', version: '10.4' },
                           { distribution: 'mariadb', version: '10.3' } ]
-        include:
-          - php-versions: '8.1'
-            stable: false
-            coverage: false
-            composer-flags: '--ignore-platform-reqs'
 
     steps:
       - uses: actions/checkout@v2
