@@ -17,7 +17,7 @@ jobs:
         php-versions: [ '8.0', '8.1' ]
         stable: [ true ]
         coverage: [ true ]
-        composer-flags: [ '' ]
+        composer-flags: [ '--ignore-platform-req php' ]
         mysql-versions: [ { distribution: 'mysql', version: '8.0' },
                           { distribution: 'mysql', version: '5.7' },
                           { distribution: 'mysql', version: '5.6' },
@@ -25,12 +25,6 @@ jobs:
                           { distribution: 'mariadb', version: '10.5' },
                           { distribution: 'mariadb', version: '10.4' },
                           { distribution: 'mariadb', version: '10.3' } ]
-        include:
-          - php-versions: '8.1'
-            stable: false
-            coverage: false
-            composer-flags: '--ignore-platform-reqs'
-            mysql-versions: ${{ matrix.mysql-versions }}
 
     steps:
       - uses: actions/checkout@v2
