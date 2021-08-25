@@ -11,6 +11,8 @@ use [Keep a Changelog] (http://keepachangelog.com/).
 - Signature of `SchemaContainer::count(): int`
 - Signature of `Table::count(): int`
 - Signature of `Table::getIterator(): ArrayIterator`
+- Order of columns fixed
+- Tests fixed on MySQL 8
 
 ## [1.0.0-beta2] - 2021-07-07
 
