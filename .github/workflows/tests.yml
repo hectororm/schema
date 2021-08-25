@@ -1,0 +1,52 @@
+name: Tests
+
+on:
+  push: ~
+  pull_request: ~
+
+jobs:
+  phpunit:
+    name: PHPUnit on ${{ matrix.php-versions }} ${{ matrix.composer-flags }}
+    runs-on: ubuntu-latest
+    env:
+      MYSQL_DSN: "mysql:host=localhost;dbname=sakila;user=root"
+    continue-on-error: ${{ !matrix.stable }}
+    strategy:
+      matrix:
+        mysql-versions: [ '8.0','5.7','5.6','10.6','10.5','10.4','10.3' ]
+        php-versions: [ '8.0' ]
+        stable: [ true ]
+        coverage: [ true ]
+        composer-flags: [ '' ]
+        include:
+          - php-versions: '8.1'
+            stable: false
+            coverage: false
+            composer-flags: '--ignore-platform-reqs'
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: shogo82148/actions-setup-mysql@v1
+        with:
+          mysql-version: ${{ matrix.mysql-versions }}
+
+      - run: mysql -uroot < tests/Sakila/mysql-schema.sql
+      - run: mysql -uroot < tests/Sakila/mysql-data.sql
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: curl, mbstring
+          coverage: xdebug
+          tools: composer:v2
+
+      - run: composer update --no-progress ${{ matrix.composer-flags }}
+
+      - run: vendor/bin/phpunit --no-coverage
+        if: ${{ !matrix.coverage }}
+
+      - run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+        if: ${{ matrix.coverage }}
