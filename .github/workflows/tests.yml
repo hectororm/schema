@@ -6,7 +6,7 @@ on:
 
 jobs:
   phpunit:
-    name: PHPUnit on ${{ matrix.php-versions }} ${{ matrix.composer-flags }}
+    name: PHPUnit on ${{ matrix.php-versions }} ${{ matrix.composer-flags }} and ${{ matrix.mysql-versions.distribution }} ${{ matrix.mysql-versions.version }}
     runs-on: ubuntu-latest
     env:
       MYSQL_DSN: "mysql:host=localhost;dbname=sakila;user=root"
@@ -18,15 +18,18 @@ jobs:
         stable: [ true ]
         coverage: [ true ]
         composer-flags: [ '' ]
+        mysql-versions: [ { distribution: 'mysql', version: '8.0' },
+                          { distribution: 'mysql', version: '5.7' },
+                          { distribution: 'mysql', version: '5.6' },
+                          { distribution: 'mariadb', version: '10.6' },
+                          { distribution: 'mariadb', version: '10.5' },
+                          { distribution: 'mariadb', version: '10.4' },
+                          { distribution: 'mariadb', version: '10.3' } ]
         include:
           - php-versions: '8.1'
             stable: false
             coverage: false
             composer-flags: '--ignore-platform-reqs'
-          - mysql-versions: [ '8.0','5.7','5.6' ]
-            mysql-distribution: 'mysql'
-          - mysql-versions: [ '10.6','10.5','10.4','10.3' ]
-            mysql-distribution: 'mariadb'
 
     steps:
       - uses: actions/checkout@v2
@@ -35,8 +38,8 @@ jobs:
 
       - uses: shogo82148/actions-setup-mysql@v1
         with:
-          mysql-version: ${{ matrix.mysql-versions }}
-          distribution: ${{ matrix.mysql-distribution }}
+          mysql-version: ${{ matrix.mysql-versions.version }}
+          distribution: ${{ matrix.mysql-versions.distribution }}
 
       - run: mysql -uroot < tests/Sakila/mysql-schema.sql
       - run: mysql -uroot < tests/Sakila/mysql-data.sql
@@ -44,7 +47,7 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
-          extensions: curl, mbstring
+          extensions: pdo, pdo-sqlite
           coverage: xdebug
           tools: composer:v2
 
