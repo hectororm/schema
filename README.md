@@ -24,12 +24,24 @@ $ composer require hectororm/schema
 * Packages dependencies:
   * **hectororm/connection**
 
+## DBMS compatibility
+
+| DBMS | Version | Compatibility |
+| --- |: --- :|: --- :|
+| MySQL | 8.0 | ✔ |
+| MySQL | 5.7 | ✔ |
+| MySQL | 5.6 | ✔ |
+| MySQL | 5.5 | ? |
+| MariaDB | 10.6 | ✔ |
+| MariaDB | 10.5 | ✔ |
+| MariaDB | 10.4 | ✔ |
+| MariaDB | 10.3 | ✔ |
+| MariaDB | 10.2 | ? |
+| Sqlite | 3.x | ✔ |
+
+If you have any information on the compatibility of other versions, feel free to make a PR. 
+
 ## Usage
-
-Two DBMS are available at this time:
-
-- Sqlite
-- MySQL / MariaDB
 
 ### Generate a schema
 
