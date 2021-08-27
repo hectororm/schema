@@ -17,6 +17,8 @@ use [Keep a Changelog] (http://keepachangelog.com/).
 - Signature of `Table::getIterator(): ArrayIterator`
 - Order of columns fixed
 - Tests fixed on MySQL 8
+- Empty value with MariaDB
+- Comparisons with PHP 8.1
 
 ## [1.0.0-beta2] - 2021-07-07
 
