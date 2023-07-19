@@ -9,6 +9,7 @@ use [Keep a Changelog] (http://keepachangelog.com/).
 ### Changed
 
 - Compatibility SQL ASCII mode
+- `Column::getName()` quote alias too
 
 ## [1.0.0-beta5] - 2022-09-05
 
