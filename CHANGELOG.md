@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. This projec
 to [Semantic Versioning] (http://semver.org/). For change log format,
 use [Keep a Changelog] (http://keepachangelog.com/).
 
+## [1.0.0-beta6] - 2023-07-19
+
+### Changed
+
+- Compatibility SQL ASCII mode
+
 ## [1.0.0-beta5] - 2022-09-05
 
 ### Changed
