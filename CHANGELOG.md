@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. This projec
 to [Semantic Versioning] (http://semver.org/). For change log format,
 use [Keep a Changelog] (http://keepachangelog.com/).
 
+## [1.0.0-beta7] - 2024-03-19
+
+### Added
+
+- New property `Schema::$alias` to get schema by its alias
+
 ## [1.0.0-beta6] - 2023-07-21
 
 ### Changed
