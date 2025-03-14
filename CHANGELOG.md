@@ -6,8 +6,13 @@ use [Keep a Changelog] (http://keepachangelog.com/).
 
 ## [1.0.0-beta10] - 2025-03-14
 
+### Changed
+
+- Bump `hectororm/connection` version to 1.0.0-beta9
+
 ### Fixed
 
+- Compatibility with MariaDB >= 11.5 to get charsets
 - Implicitly marking parameter as nullable
 
 ## [1.0.0-beta9] - 2025-02-04
