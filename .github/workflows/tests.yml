@@ -18,20 +18,17 @@ jobs:
         stable: [ true ]
         coverage: [ true ]
         composer-flags: [ '--ignore-platform-req php' ]
-        mysql-versions: [ { distribution: 'mysql', version: '8.4' },
+        mysql-versions: [ { distribution: 'mysql', version: 'latest' },
+                          { distribution: 'mysql', version: '8.4' },
                           { distribution: 'mysql', version: '8.0' },
                           { distribution: 'mysql', version: '5.7' },
                           { distribution: 'mysql', version: '5.6' },
+                          { distribution: 'mariadb', version: 'latest' },
                           { distribution: 'mariadb', version: '11.7' },
-                          { distribution: 'mariadb', version: '11.6' },
-                          { distribution: 'mariadb', version: '11.5' },
                           { distribution: 'mariadb', version: '11.4' },
-                          { distribution: 'mariadb', version: '11.3' },
-                          { distribution: 'mariadb', version: '11.2' },
-                          { distribution: 'mariadb', version: '11.1' },
-                          { distribution: 'mariadb', version: '11.0' },
+                          { distribution: 'mariadb', version: '10.11' },
                           { distribution: 'mariadb', version: '10.6' },
-                          { distribution: 'mariadb', version: '10.3' } ]
+                          { distribution: 'mariadb', version: '10.5' } ]
 
     steps:
       - uses: actions/checkout@v2
