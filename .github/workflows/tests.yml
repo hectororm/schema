@@ -18,12 +18,13 @@ jobs:
         stable: [ true ]
         coverage: [ true ]
         composer-flags: [ '--ignore-platform-req php' ]
-        mysql-versions: [ { distribution: 'mysql', version: '8.0' },
+        mysql-versions: [ { distribution: 'mysql', version: '8.4' },
+                          { distribution: 'mysql', version: '8.0' },
                           { distribution: 'mysql', version: '5.7' },
                           { distribution: 'mysql', version: '5.6' },
+                          { distribution: 'mariadb', version: '11.8' },
+                          { distribution: 'mariadb', version: '11.0' },
                           { distribution: 'mariadb', version: '10.6' },
-                          { distribution: 'mariadb', version: '10.5' },
-                          { distribution: 'mariadb', version: '10.4' },
                           { distribution: 'mariadb', version: '10.3' } ]
 
     steps:
