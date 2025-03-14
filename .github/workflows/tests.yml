@@ -22,7 +22,7 @@ jobs:
                           { distribution: 'mysql', version: '8.0' },
                           { distribution: 'mysql', version: '5.7' },
                           { distribution: 'mysql', version: '5.6' },
-                          { distribution: 'mariadb', version: '11.8' },
+                          { distribution: 'mariadb', version: '11.7' },
                           { distribution: 'mariadb', version: '11.0' },
                           { distribution: 'mariadb', version: '10.6' },
                           { distribution: 'mariadb', version: '10.3' } ]
