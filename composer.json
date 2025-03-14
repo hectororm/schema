@@ -24,7 +24,7 @@
   "require": {
     "php": "^8.0",
     "ext-pdo": "*",
-    "hectororm/connection": "v1.0.0-beta8"
+    "hectororm/connection": "v1.0.0-beta9"
   },
   "require-dev": {
     "ext-pdo_mysql": "*",
