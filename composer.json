@@ -1,8 +1,7 @@
 {
   "name": "hectororm/schema",
   "description": "Hector Schema",
-  "minimum-stability": "beta",
-  "prefer-stable": true,
+  "minimum-stability": "stable",
   "license": "MIT",
   "homepage": "https://gethectororm.com",
   "authors": [
@@ -24,7 +23,7 @@
   "require": {
     "php": "^8.0",
     "ext-pdo": "*",
-    "hectororm/connection": "v1.0.0-beta9"
+    "hectororm/connection": "^1.0"
   },
   "require-dev": {
     "ext-pdo_mysql": "*",
